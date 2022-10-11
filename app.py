@@ -26,6 +26,10 @@ app.register_blueprint(filtersbp)
 app.register_blueprint(andriodbp)
 
 
+@app.route('/')
+def index():
+    return jsonify({'message':'Welcome to Image API'})
+
 # CRTEAT func for upload images
 @app.route('/images', methods=['POST'])
 def upload_image():
